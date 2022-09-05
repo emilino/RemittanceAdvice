@@ -2,7 +2,7 @@
 
 namespace RemittanceAdvice.Models
 {
-    public class User : IdentityUser<string>
+    public class User : IdentityUser<int>
     {
     }
 }

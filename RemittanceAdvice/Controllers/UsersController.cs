@@ -6,7 +6,6 @@ using RemittanceAdvice.ViewModels.Users;
 
 namespace RemittanceAdvice.Controllers
 {
-    [Authorize]
     public class UsersController : Controller
     {
         UserManager<User> _userManager;
@@ -61,7 +60,7 @@ namespace RemittanceAdvice.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByIdAsync(model.Id);
+                var user = await _userManager.FindByIdAsync(model.Id.ToString());
                 if(user != null)
                 {
                     user.Email = model.Email;
@@ -114,7 +113,7 @@ namespace RemittanceAdvice.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await _userManager.FindByIdAsync(model.Id);
+                User user = await _userManager.FindByIdAsync(model.Id.ToString());
                 if(user != null)
                 {
                     var _passwordValidator =

@@ -80,7 +80,7 @@ namespace RemittanceAdvice.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByIdAsync(model.Id);
+                var user = await _userManager.FindByIdAsync(model.Id.ToString());
                 if(user != null)
                 {
                     IdentityResult result =

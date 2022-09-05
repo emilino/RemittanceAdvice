@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RemittanceAdvice.Models.Data
 {
-    public class ApplicationContext : IdentityDbContext<User, Role, string>
+    public class ApplicationContext : IdentityDbContext<User, Role, int>
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {}
