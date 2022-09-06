@@ -24,6 +24,8 @@ builder.Services.AddControllersWithViews();
 // middlewares
 var app = builder.Build();
 
+await RoleInitializer.Initialize(app);
+
 app.UseDeveloperExceptionPage();
 
 app.UseStaticFiles();
